@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: hsl(234, 29%, 20%);
+        }
+
+        .wrapper {
+            display: grid;
+            place-items: center;
+            height: 30vh;
+        }
+
+        .container {
+            margin-top: 5%;
+        }
+
+        .container {
+            width: 380px;
+            height: 95%;
+            max-width: 100%;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 20px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image {
+            margin-left: -85%;
+            margin-bottom: 20px;
+        }
+
+        .image img {
+            width: 50px;
+            border-radius: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            color: hsl(234, 29%, 20%);
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        .content p {
+            font-size: 12px;
+            line-height: 1.4;
+            color: hsl(234, 29%, 20%);
+            margin: 10px 0;
+        }
+
+        button[type="submit"] {
+            margin-top: 30px;
+            background: linear-gradient(90deg, rgba(232,106,144,1) 0%, rgba(252,89,62,1) 70%);
+            color: hsl(0, 0%, 100%);
+            font-size: 16px;
+            font-weight: 700;
+            padding: 13px 80px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            box-shadow: 0 20px 20px rgba(226, 108, 108, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="image">
+                <img src="assets/images/icon-list.svg" alt="Newsletter">
+            </div>
+            <div class="content">
+                <h1>Thanks for subscribing!</h1>
+                <p>A confirmation eamil has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to confirm your subscription.</p>
+            </div>
+            <button type="submit">Dimiss message</button>
+        </div>
+    </div>
+</body>
+</html>

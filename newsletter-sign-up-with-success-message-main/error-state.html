@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frontend Mentor | Newsletter sign-up form with success messagep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: hsl(234, 29%, 20%);
+        }
+
+        .wrapper {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            margin-top: 25px;
+        }
+
+        .container {
+            width: 750px;
+            height: 500px;
+            max-width: 100%;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+        }
+
+        .image {
+            flex: 1;
+            margin-top: -20px;
+            margin-right: -50px;
+        }
+
+        .image img {
+            width: 90%;
+            height: 460px;
+            border-radius: 20px;
+        }
+
+        .content {
+            flex: 1;
+            margin: 15px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content h1 {
+            font-size: 45px;
+            color: hsl(234, 29%, 20%);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: hsl(234, 29%, 20%);
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .content ul li {
+            display: flex;
+            align-items: center;
+            color: hsl(234, 29%, 20%);
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .content ul li i {
+            color: hsl(234, 29%, 20%);
+            margin-right: 10px;
+        }
+
+        .content ul li img {
+            margin-right: 15px;
+            width: 15px;
+        }
+
+        .content input[type="email"] {
+            width: 92%;
+            padding: 14px;
+            border-radius: 4px;
+            border: solid 1px hsl(234, 29%, 20%);
+            opacity: 0.5;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .content input[type="email"]:focus {
+            border-color: hsl(15, 100%, 70%);
+        }
+
+        .content button[type="submit"] {
+            background-color: hsl(234, 29%, 20%);;
+            color: hsl(0, 0%, 100%);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 16px 60px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        .content button[type="submit"]:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .content .error-message {
+            font-size: 12px;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <div class="content">
+                    <h1>  Stay updated! </h1>
+                    <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                    <ul>
+                        <li><img src="assets/images/icon-list.svg" alt="icon-list">Product discovery and building what matters</li>
+                        <li><img src="assets/images/icon-list.svg" alt="icon-list">Measuring to ensure updates are a success</li>
+                        <li><img src="assets/images/icon-list.svg" alt="icon-list">And much more!</li>
+                    </ul>
+                    <form>
+                        <label style="color: hsl(234, 29%, 20%);font-size: 10px; font-weight: 700;" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="email@company.com" required>
+                        <span class="error-message" id="email-error"></span>
+                        <button type="submit">Subscribe to monthly newsletter</button>
+                    </form>
+                </div>
+                <div class="image">
+                    <img src="assets/images/illustration-sign-up-desktop.svg" alt="Newsletter">
+                </div>                                                
+            </div>
+        </div>
+
+        <script>
+            const form = document.querySelector("form");
+            const emailInput = document.getElementById("email");
+            const emailError = document.getElementById("email-error");
+          
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+          
+              const emailValue = emailInput.value.trim();
+          
+              if (emailValue === "") {
+                emailInput.classList.add("error");
+                emailError.textContent = "Please enter your email";
+              } else {
+                emailInput.classList.remove("error");
+                emailError.textContent = "";
+                alert("Form submitted successfully!");
+                // Perform additional actions for a successful form submission
+              }
+            });
+          </script>          
+    </body>
+</html>
